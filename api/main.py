@@ -23,6 +23,10 @@ def home():
   randomQuote = random.randint(0, len(quotes)-1)
   return render_template('index.html', authortext=authors[randomQuote].text, quotetext=quotes[randomQuote].text, authorpic=authorpic[randomQuote])
 
+@app.route('/test')
+def hello():
+  return "Hello!!"
+
 
 
 # Running It

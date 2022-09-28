@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Generator</title>
+</head>
+<!--   CSS CODE -->
+  <style>
+    *{
+      font-family: sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    html,body{
+      height: 100%;
+    }
+
+    
+    
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black;
+    }
+
+    .card{
+      width: 50vw;
+      height: auto;
+      padding: 40px 15px;
+      background: white;
+      color: black;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      z-index: 3;
+    }
+
+    section::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0; 
+      height: 100%;  
+      width: 100%; 
+      background: #4e89fd;
+      clip-path: circle(55% at 100% -10%);
+      z-index: -10;
+    }
+    section::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0; 
+      height: 100%;  
+      width: 100%; 
+      background: #a850ce;
+      clip-path: circle(55% at 0% 130%);
+      z-index: -10;
+    }
+
+    button{
+      width: 90%;
+      height: 60px;
+      color: white;
+      background: #4e89fd;
+      border-radius: 20px;
+      border:none;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    @media(max-width: 913px){
+      .card{
+        width: 80vw;
+      }
+    }
+  
+    #author{
+      font-size: 2rem;
+    }
+
+    h1{
+      font-size: 0.7rem;
+    }
+    #imgFiles{
+      display: none;
+    }
+  </style>
+
+<!--   WEBPAGE STRUCTURE WITH FILL IN BLANKS -->
+<body>
+  <section>
+  <div class="card">
+  <h1 id="author">{{authortext}}</h1>
+  <br>
+  <p>{{quotetext}}</p>
+  <br>
+
+  <button id="refreshPage" onclick=refresh()>New Quote</button>
+    <br><br>
+    <h1>Quotes Scraped from <a style="color: black; text-decoration: none;"href="https://www.azquotes.com/top_quotes.html">www.azquotes.com</a></h1>
+    </div>
+    </section>
+
+<!--   JAVASCRIPT -->
+  <script>
+    function refresh(){
+      console.log('Page Refreshed');
+      window.location.reload();
+    }
+  </script>
+</body>
+</html>
